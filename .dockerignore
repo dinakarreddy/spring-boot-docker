@@ -1,0 +1,3 @@
+*
+!target/dependency/BOOT-INF
+!target/dependency/META-INF

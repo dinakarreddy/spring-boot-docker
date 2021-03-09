@@ -1,0 +1,21 @@
+server:
+  port:
+    8080
+logging:
+  level:
+    liquibase: INFO
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://postgres:5432/amsnbfc
+    username: amsnbfc
+    password: amsnbfc
+  jpa:
+    database: POSTGRESQL
+    show-sql: false
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+  liquibase:
+    change-log: classpath:liquibase/db/changelog/changelog-master.xml
+    enabled: false

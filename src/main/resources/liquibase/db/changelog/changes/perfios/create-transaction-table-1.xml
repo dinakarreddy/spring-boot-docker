@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+    http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet author="dinakar" id="1">
+        <createTable tableName="transaction">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="master_user_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(64)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reason" type="VARCHAR(64)">
+            </column>
+            <column name="summary" type="JSONB">
+            </column>
+            <column name="detected_monthly_income" type="NUMBER">
+            </column>
+            <column name="income_verified" type="BOOLEAN">
+            </column>
+            <column name="abb_verified" type="BOOLEAN">
+            </column>
+            <column name="salary_found" type="BOOLEAN">
+            </column>
+            <column name="is_valid" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_at" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reason" type="VARCHAR(64)">
+            </column>
+            <column name="is_checked_for_recent_loan" type="BOOLEAN">
+            </column>
+            <column name="transaction_id" type="BIGINT">
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="transaction"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
